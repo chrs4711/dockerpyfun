@@ -6,5 +6,7 @@ WORKDIR /code
 
 COPY funapp.py .
 
-CMD [ "python", "./funapp.py" ]
+# We're using ENTRYPOINT where all arguments to `docker run <image>` will be
+# passed to whatever is specified by the ENTRYPOINT.
+ENTRYPOINT [ "python", "./funapp.py"]
 
