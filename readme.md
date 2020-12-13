@@ -58,5 +58,22 @@ python script running within the container:
 $ docker run --rm -it --name test funimage foo bar
 ```
 
-Works, though there's a significant startup lag :/
+## Using it as a normal command
 
+Now, to run as if it were a normal command, an alias is needed:
+
+```
+$ alias funapp="docker run --rm -it --name test funimage"
+```
+
+after that, we can call it with:
+
+```
+$ funapp foo bar
+>> This is an example app running Python 3.8.5 (default, Jul 20 2020, 23:11:29) 
+[GCC 9.3.0]
+>> Number of arguments: 3
+>> Arguments: ['./funapp.py', 'foo', 'bar']
+```
+
+Works, though there's a significant startup lag :/
